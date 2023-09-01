@@ -1,5 +1,7 @@
 package co.edu.uptc.GUIwindows;
 
+import co.edu.uptc.logic.Bet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,8 +9,10 @@ import java.awt.event.ActionListener;
 
 public class GUIInitialWindow extends JFrame implements ActionListener {
     private JPanel JPFormArea;
+    private JPanel JPInfoArea;
     private JLabel JLTitle;
     private JLabel JLAmountToBet;
+    private JLabel JLProfitInstructions;
     private JTextField JTAmountToBet;
 
     private JButton JBStart;
@@ -16,7 +20,15 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
 
     public GUIInitialWindow(){
         JPFormArea = new JPanel();
+        JPInfoArea = new JPanel();
+
         JLTitle = new JLabel("Give us your money Casino", SwingConstants.CENTER);
+
+        String profitInstructions = "<html>Ganarás 3 veces el valor apostado si aciertas las 3 imágenes<br>" +
+                "Ganarás 2 veces el valor apostado si aciertas solo dos imágenes<br>" +
+                "Perderás tu valor apostado si no aciertas ninguna </html>";
+
+        JLProfitInstructions = new JLabel(profitInstructions);
 
         JLAmountToBet = new JLabel("Monto a apostar");
         JTAmountToBet = new JTextField();
@@ -45,10 +57,19 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
         JLTitle.setFont(new Font("Arial", Font.BOLD, 30));
         JLTitle.setForeground(new Color(31, 90, 166));
 
-        JLAmountToBet.setBounds(15, 220, 200, 20);
+        JPInfoArea.setBounds(20, 80, 500, 150);
+        JPInfoArea.setBackground(Color.white);
+
+        JPInfoArea.setLayout(null);
+
+        JLProfitInstructions.setBounds(5,3,450,100);
+        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 12));
+        JLProfitInstructions.setForeground(Color.black);
+
+        JLAmountToBet.setBounds(15, 280, 200, 20);
         JLAmountToBet.setFont(new Font("Fredoka One", Font.BOLD, 20));
         JLAmountToBet.setForeground(Color.black);
-        JTAmountToBet.setBounds(15, 250, 245, 30);
+        JTAmountToBet.setBounds(15, 310, 245, 30);
 
         JBStart.setBounds(300, 390, 90, 40);
         JBStart.setForeground(Color.white);
@@ -62,6 +83,8 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
 
         add(JPFormArea);
         JPFormArea.add(JLTitle);
+        JPFormArea.add(JPInfoArea);
+        JPInfoArea.add(JLProfitInstructions);
         JPFormArea.add(JLAmountToBet);
         JPFormArea.add(JTAmountToBet);
         JPFormArea.add(JBStart);
@@ -77,7 +100,9 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
             this.setVisible(false);
             if (JTAmountToBet.getText().length()!=0){
                 double amountToBet= Double.parseDouble(JTAmountToBet.getText());
-                //Crear el objeto apuesta y ingresar el monto a apostar
+                new Bet(amountToBet);
+                JOptionPane.showMessageDialog(null,"Monto establecido");
+                //Mostrar en un messageDialog cuanto podria ganar dependiento de los haciertos
                 //Añadir la GUI de la pantalla de juego
             }else {
                 JOptionPane.showMessageDialog(null, "Digite todo los datos");
