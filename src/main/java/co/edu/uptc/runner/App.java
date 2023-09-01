@@ -1,5 +1,7 @@
 package co.edu.uptc.runner;
 
+import co.edu.uptc.GUIwindows.GUIInitialWindow;
+
 /**
  * Hello world!
  *
@@ -7,7 +9,6 @@ package co.edu.uptc.runner;
 public class App 
 {
     public static void main( String[] args ) {
-
-    System.out.println( "Hello World!" );
+        new GUIInitialWindow().makeMainForm();
     }
 }
