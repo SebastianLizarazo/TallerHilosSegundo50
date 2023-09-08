@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f33b3b5c-0cd0-4bcc-bee2-118dd96dfcea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIInitialWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIInitialWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50",
+    "last_opened_file_path": "C:/Users/sebli/IdeaProjects/Hilos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,6 +47,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sebli\IdeaProjects\TallerHilosSegundo50\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +61,9 @@
       <option name="presentableId" value="Default" />
       <updated>1693502299351</updated>
       <workItem from="1693502300752" duration="4642000" />
-      <workItem from="1693569933279" duration="7224000" />
+      <workItem from="1693569933279" duration="11310000" />
+      <workItem from="1694123184283" duration="696000" />
+      <workItem from="1694164578420" duration="5813000" />
     </task>
     <servers />
   </component>
