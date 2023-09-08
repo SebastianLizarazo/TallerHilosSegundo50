@@ -12,30 +12,28 @@ public class GUILastWindow extends JFrame implements ActionListener {
     private JPanel JPFormArea;
     private JPanel JPInfoArea;
     private JLabel JLTitle;
-    private JLabel JLAmountToBet;
     private JLabel JLProfitInstructions;
-    private JTextField JTAmountToBet;
 
     private JButton JBStart;
     private JButton JBCancel;
 
+    private Bet currentBet;
+
     public GUILastWindow(Bet betRecived){
+        currentBet = betRecived;
+
         JPFormArea = new JPanel();
         JPInfoArea = new JPanel();
 
         JLTitle = new JLabel("Give us your money Casino", SwingConstants.CENTER);
 
-        String profitInstructions = "<html>Ganarás 3 veces el valor apostado si aciertas las 3 imágenes<br>" +
-                "Ganarás 2 veces el valor apostado si aciertas solo dos imágenes<br>" +
-                "Perderás tu valor apostado si no aciertas ninguna </html>";
+        String profitInstructions = announceProfit();
 
-        JLProfitInstructions = new JLabel(profitInstructions);
+        JLProfitInstructions = new JLabel(profitInstructions,SwingConstants.CENTER);
 
-        JLAmountToBet = new JLabel("Monto a apostar");
-        JTAmountToBet = new JTextField();
 
-        JBStart = new JButton("Iniciar");
-        JBCancel = new JButton("Cancelar");
+        JBStart = new JButton("Reintentar");
+        JBCancel = new JButton("Terminar");
 
         setLayout(null);
 
@@ -48,6 +46,16 @@ public class GUILastWindow extends JFrame implements ActionListener {
         setResizable(false);
     }
 
+    private String announceProfit() {
+        String announce = "";
+        if (currentBet.getAmountWinned()>0){
+            announce = "<html><center>Felicidades has ganado $"+currentBet.getAmountWinned()+"</center></html>";
+        }else {
+            announce = "<html><center>Acabas de perder, muchas gracias por regalarnos tu dinero ;) </center></html>";
+        }
+        return announce;
+    }
+
     public void lastWindow(){
         JPFormArea.setBounds(0, 0, 575, 490);
         JPFormArea.setBackground(new Color(242, 242, 242));
@@ -58,21 +66,17 @@ public class GUILastWindow extends JFrame implements ActionListener {
         JLTitle.setFont(new Font("Arial", Font.BOLD, 30));
         JLTitle.setForeground(new Color(31, 90, 166));
 
-        JPInfoArea.setBounds(20, 80, 500, 150);
+        JPInfoArea.setBounds(40, 80, 500, 150);
         JPInfoArea.setBackground(Color.white);
 
         JPInfoArea.setLayout(null);
 
         JLProfitInstructions.setBounds(5,3,450,100);
-        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 12));
+        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 15));
         JLProfitInstructions.setForeground(Color.black);
 
-        JLAmountToBet.setBounds(15, 280, 200, 20);
-        JLAmountToBet.setFont(new Font("Fredoka One", Font.BOLD, 20));
-        JLAmountToBet.setForeground(Color.black);
-        JTAmountToBet.setBounds(15, 310, 245, 30);
 
-        JBStart.setBounds(300, 390, 90, 40);
+        JBStart.setBounds(300, 390, 110, 40);
         JBStart.setForeground(Color.white);
         JBStart.setBackground(new Color(22, 85, 140));
         JBStart.addActionListener(this);
@@ -86,8 +90,6 @@ public class GUILastWindow extends JFrame implements ActionListener {
         JPFormArea.add(JLTitle);
         JPFormArea.add(JPInfoArea);
         JPInfoArea.add(JLProfitInstructions);
-        JPFormArea.add(JLAmountToBet);
-        JPFormArea.add(JTAmountToBet);
         JPFormArea.add(JBStart);
         JPFormArea.add(JBCancel);
 
@@ -98,17 +100,9 @@ public class GUILastWindow extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object o = e.getSource();
         if (o.equals(JBStart)){
-            if (JTAmountToBet.getText().length()!=0){
-                double amountToBet= Double.parseDouble(JTAmountToBet.getText());
-                Bet currentBet= new Bet(amountToBet);
-                JOptionPane.showMessageDialog(null,"Monto establecido");
-                //Mostrar en un messageDialog cuanto podria ganar dependiento de los haciertos
-                this.setVisible(false);
-                GUIGameWindow c = new GUIGameWindow(currentBet);
-                c.GameScreen();
-            }else {
-                JOptionPane.showMessageDialog(null, "Digite todo los datos");
-            }
+            this.setVisible(false);
+            GUIInitialWindow c = new GUIInitialWindow();
+            c.makeMainForm();
         }else if (o.equals(JBCancel)){
             JOptionPane.showMessageDialog(null, "Adios");
             System.exit(0);

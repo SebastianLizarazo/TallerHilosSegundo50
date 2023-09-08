@@ -7,6 +7,7 @@ import co.edu.uptc.logic.ThreadCount;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalTime;
+import java.util.Random;
 
 public class GUIGameWindow extends JFrame {
 
@@ -94,18 +95,45 @@ public class GUIGameWindow extends JFrame {
             if (gameController.isTheGameOver(runOne,runTwo,runThree)){
                 Double amountWined = GameController.calculateVictory(runOne,runTwo,runThree,currentBet); //Implementar metodo para calcular la victoria del jugador con el objeto bet entrante
                 currentBet.setAmountWinned(amountWined);
+                try {
+                    Thread.sleep(1000);
+                }catch (InterruptedException m){
+                    throw new RuntimeException(m);
+                }
                 this.setVisible(false);
                 GUILastWindow c = new GUILastWindow(currentBet);
                 c.lastWindow();
-            }else {
-                System.out.println("no");
             }
         });
         JBtnTwo.addActionListener((e)->{
             runTwo.stopThread();
+            if (gameController.isTheGameOver(runOne,runTwo,runThree)){
+                Double amountWined = GameController.calculateVictory(runOne,runTwo,runThree,currentBet); //Implementar metodo para calcular la victoria del jugador con el objeto bet entrante
+                currentBet.setAmountWinned(amountWined);
+                try {
+                    Thread.sleep(1000);
+                }catch (InterruptedException k){
+                    throw new RuntimeException(k);
+                }
+                this.setVisible(false);
+                GUILastWindow c = new GUILastWindow(currentBet);
+                c.lastWindow();
+            }
         });
         JBtnThree.addActionListener((e)->{
             runThree.stopThread();
+            if (gameController.isTheGameOver(runOne,runTwo,runThree)){
+                Double amountWined = GameController.calculateVictory(runOne,runTwo,runThree,currentBet); //Implementar metodo para calcular la victoria del jugador con el objeto bet entrante
+                currentBet.setAmountWinned(amountWined);
+                try {
+                    Thread.sleep(1000);
+                }catch (InterruptedException j){
+                    throw new RuntimeException(j);
+                }
+                this.setVisible(false);
+                GUILastWindow c = new GUILastWindow(currentBet);
+                c.lastWindow();
+            }
         });
     }
 

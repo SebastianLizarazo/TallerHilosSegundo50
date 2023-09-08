@@ -25,11 +25,11 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
 
         JLTitle = new JLabel("Give us your money Casino", SwingConstants.CENTER);
 
-        String profitInstructions = "<html>Ganarás 3 veces el valor apostado si aciertas las 3 imágenes<br>" +
-                "Ganarás 2 veces el valor apostado si aciertas solo dos imágenes<br>" +
-                "Perderás tu valor apostado si no aciertas ninguna </html>";
+        String profitInstructions = "<html> -Ganarás 3 veces el valor apostado si aciertas las 3 imágenes<br>" +
+                "-Ganarás 2 veces el valor apostado si aciertas dos imágenes<br>" +
+                "-Perderás tu valor apostado si no aciertas ninguna </html>";
 
-        JLProfitInstructions = new JLabel(profitInstructions);
+        JLProfitInstructions = new JLabel(profitInstructions,SwingConstants.CENTER);
 
         JLAmountToBet = new JLabel("Monto a apostar");
         JTAmountToBet = new JTextField();
@@ -58,19 +58,19 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
         JLTitle.setFont(new Font("Arial", Font.BOLD, 30));
         JLTitle.setForeground(new Color(31, 90, 166));
 
-        JPInfoArea.setBounds(20, 80, 500, 150);
+        JPInfoArea.setBounds(40, 80, 500, 120);
         JPInfoArea.setBackground(Color.white);
 
         JPInfoArea.setLayout(null);
 
         JLProfitInstructions.setBounds(5,3,450,100);
-        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 12));
+        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 15));
         JLProfitInstructions.setForeground(Color.black);
 
-        JLAmountToBet.setBounds(15, 280, 200, 20);
+        JLAmountToBet.setBounds(40, 280, 200, 20);
         JLAmountToBet.setFont(new Font("Fredoka One", Font.BOLD, 20));
         JLAmountToBet.setForeground(Color.black);
-        JTAmountToBet.setBounds(15, 310, 245, 30);
+        JTAmountToBet.setBounds(40, 310, 245, 30);
 
         JBStart.setBounds(300, 390, 90, 40);
         JBStart.setForeground(Color.white);

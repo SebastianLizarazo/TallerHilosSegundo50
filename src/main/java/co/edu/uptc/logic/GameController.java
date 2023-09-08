@@ -16,9 +16,9 @@ public class GameController {
     }
 
     public boolean isTheGameOver(ThreadCount runOne, ThreadCount runTwo, ThreadCount runThree) {
-        if (runOne.isState() && runTwo.isState() && runThree.isState()){
-            return false;
+        if (runOne.isState()==false && runTwo.isState()==false  && runThree.isState()==false){
+            return true;
         }
-        return true;
+        return false;
     }
 }
