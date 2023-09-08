@@ -13,13 +13,13 @@ import java.util.Random;
 
 public class ThreadCount implements Runnable {
 
-    private JLabel JLimagesSpace;//Hay que cambiarlo para que acepte imagenes
+    private JLabel JLimagesSpace;
     private boolean State;
 
     private  String ImageName;
-    private boolean stopRequested; // Bandera para indicar si se solicitó detener la visualización
-    private int initialDelay; // Tiempo de espera inicial entre cambios de imagen
-    private int delayIncrease; // Velocidad de disminución del tiempo de espera
+    private boolean stopRequested; //Indicar si se solicitó detener la visualización
+    private int initialDelay; //Tiempo de espera inicial entre cambios de imagen
+    private int delayIncrease; //Velocidad de incremento del tiempo de espera
 
     private GUIGameWindow currentWindow;
 
@@ -30,7 +30,7 @@ public class ThreadCount implements Runnable {
         this.JLimagesSpace = imagesSpace;
         this.State = state;
         this.initialDelay = 100;
-        this.delayIncrease = 50;
+        this.delayIncrease = 30;
         this.currentWindow = currentWindow;
     }
 
@@ -70,7 +70,7 @@ public class ThreadCount implements Runnable {
 
     private void showImages() throws IOException {
         Random rdn = new Random();
-        int delay = this.initialDelay; // Tiempo de espera inicial
+        int delay = this.initialDelay;//Tiempo de espera inicial
 
         while (State && !stopRequested){
             int num = rdn.nextInt(60);
@@ -93,10 +93,10 @@ public class ThreadCount implements Runnable {
                 throw new RuntimeException(e);
             }
 
-            // Disminuir gradualmente el tiempo de espera (aumentar velocidad)
+            //aumenta gradualmente el tiempo de cambio
             delay += delayIncrease;
 
-            // Restringir la velocidad mínima
+
             if (delay >= 800) {
                 State = false;
                 currentWindow.setVisible(false);
@@ -109,7 +109,7 @@ public class ThreadCount implements Runnable {
 
     public void stopThread() {
         State = false;
-        stopRequested = true; // Indicar que se solicitó detener la visualización
+        stopRequested = true; //Indicar que se solicitó detener la visualización
     }
 
     private Image chargeFirstImage() throws IOException {

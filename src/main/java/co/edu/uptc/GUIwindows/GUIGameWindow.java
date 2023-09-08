@@ -39,7 +39,7 @@ public class GUIGameWindow extends JFrame {
         JBtnThree = new JButton("Stop");
 
         setTitle("Pantalla de juego");
-        setSize(800,700);
+        setSize(600,500);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -48,17 +48,30 @@ public class GUIGameWindow extends JFrame {
     public void GameScreen(){//Es el equivalente del metodo begin del ejemplo de hilos
         JPanel JPCenter = new JPanel();
 
-        JPMainArea.setBounds(0, 0, 800, 700);
+        JPMainArea.setBounds(0, 0, 600, 500);
         JPMainArea.setBackground(new Color(242, 242, 242));
 
         JPMainArea.setLayout(null);
 
         JPCenter.setLayout(new GridLayout(2,3));//Organiza los componentes en una cuadricula
-        JPCenter.setBounds(200,200,400,300);
+        JPCenter.setBounds(90,80,400,300);
+        JPCenter.setBorder(BorderFactory.createLineBorder(new Color(22, 85, 140),2));
 
         JLImagesOne.setBounds(10,10,10,10);
         JLImagesTwo.setBounds(10,10,10,10);
         JLImagesThree.setBounds(10,10,10,10);
+
+        JBtnOne.setBackground(new Color(168, 191, 86));
+        JBtnOne.setBounds(0,0,133,100);
+        JBtnOne.setForeground(Color.black);
+
+        JBtnTwo.setBackground(new Color(168, 191, 86));
+        JBtnTwo.setBounds(0,0,133,100);
+        JBtnTwo.setForeground(Color.black);
+
+        JBtnThree.setBackground(new Color(168, 191, 86));
+        JBtnThree.setBounds(0,0,133,100);
+        JBtnThree.setForeground(Color.black);
 
         add(JPMainArea);
         JPCenter.add(JLImagesOne);

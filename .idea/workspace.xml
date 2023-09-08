@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f33b3b5c-0cd0-4bcc-bee2-118dd96dfcea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIInitialWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIInitialWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUILastWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUILastWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" afterDir="false" />
     </list>
@@ -67,7 +69,7 @@
       <workItem from="1694164578420" duration="6657000" />
       <workItem from="1694186523768" duration="8280000" />
       <workItem from="1694204432475" duration="3040000" />
-      <workItem from="1694208258668" duration="2559000" />
+      <workItem from="1694208258668" duration="4973000" />
     </task>
     <servers />
   </component>

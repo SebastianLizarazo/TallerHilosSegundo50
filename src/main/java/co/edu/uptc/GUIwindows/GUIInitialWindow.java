@@ -31,7 +31,7 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
 
         JLProfitInstructions = new JLabel(profitInstructions,SwingConstants.CENTER);
 
-        JLAmountToBet = new JLabel("Monto a apostar");
+        JLAmountToBet = new JLabel("Monto a apostar $");
         JTAmountToBet = new JTextField();
 
         JBStart = new JButton("Iniciar");
@@ -59,6 +59,7 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
         JLTitle.setForeground(new Color(31, 90, 166));
 
         JPInfoArea.setBounds(40, 80, 500, 120);
+        JPInfoArea.setBorder(BorderFactory.createLineBorder(new Color(168, 191, 86),2));
         JPInfoArea.setBackground(Color.white);
 
         JPInfoArea.setLayout(null);

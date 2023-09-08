@@ -31,7 +31,6 @@ public class GUILastWindow extends JFrame implements ActionListener {
 
         JLProfitInstructions = new JLabel(profitInstructions,SwingConstants.CENTER);
 
-
         JBStart = new JButton("Reintentar");
         JBCancel = new JButton("Terminar");
 
@@ -39,9 +38,9 @@ public class GUILastWindow extends JFrame implements ActionListener {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setSize(600, 500);
+        setSize(600, 400);
         setLocationRelativeTo(null);
-        setTitle("Formulario de inicio");
+        setTitle("Pantalla final");
 
         setResizable(false);
     }
@@ -61,7 +60,7 @@ public class GUILastWindow extends JFrame implements ActionListener {
     }
 
     public void lastWindow(){
-        JPFormArea.setBounds(0, 0, 575, 490);
+        JPFormArea.setBounds(0, 0, 600, 400);
         JPFormArea.setBackground(new Color(242, 242, 242));
 
         JPFormArea.setLayout(null);
@@ -71,21 +70,22 @@ public class GUILastWindow extends JFrame implements ActionListener {
         JLTitle.setForeground(new Color(31, 90, 166));
 
         JPInfoArea.setBounds(40, 80, 500, 150);
+        JPInfoArea.setBorder(BorderFactory.createLineBorder(new Color(168, 191, 86),2));
         JPInfoArea.setBackground(Color.white);
 
         JPInfoArea.setLayout(null);
 
-        JLProfitInstructions.setBounds(5,3,450,100);
+        JLProfitInstructions.setBounds(25,25,450,100);
         JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 18));
         JLProfitInstructions.setForeground(Color.black);
 
 
-        JBStart.setBounds(300, 390, 110, 40);
+        JBStart.setBounds(300, 300, 110, 40);
         JBStart.setForeground(Color.white);
         JBStart.setBackground(new Color(22, 85, 140));
         JBStart.addActionListener(this);
 
-        JBCancel.setBounds(200, 390, 90, 40);
+        JBCancel.setBounds(200, 300, 90, 40);
         JBCancel.setForeground(Color.white);
         JBCancel.setBackground(new Color(168, 191, 86));
         JBCancel.addActionListener(this);
