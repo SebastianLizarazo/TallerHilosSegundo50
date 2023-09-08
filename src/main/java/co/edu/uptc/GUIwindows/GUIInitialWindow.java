@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class GUIInitialWindow extends JFrame implements ActionListener {
     private JPanel JPFormArea;
@@ -103,7 +102,6 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
                 double amountToBet= Double.parseDouble(JTAmountToBet.getText());
                 Bet currentBet= new Bet(amountToBet);
                 JOptionPane.showMessageDialog(null,"Monto establecido");
-                //Mostrar en un messageDialog cuanto podria ganar dependiento de los haciertos
                 this.setVisible(false);
                 GUIGameWindow c = new GUIGameWindow(currentBet);
                 c.GameScreen();

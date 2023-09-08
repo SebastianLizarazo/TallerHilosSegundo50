@@ -6,7 +6,6 @@ import co.edu.uptc.GUIwindows.GUILastWindow;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
@@ -30,7 +29,7 @@ public class ThreadCount implements Runnable {
         this.JLimagesSpace = imagesSpace;
         this.State = state;
         this.initialDelay = 100;
-        this.delayIncrease = 30;
+        this.delayIncrease = 20;
         this.currentWindow = currentWindow;
     }
 
