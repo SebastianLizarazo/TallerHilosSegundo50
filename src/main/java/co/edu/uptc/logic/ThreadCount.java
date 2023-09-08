@@ -10,13 +10,13 @@ import java.util.Random;
 
 public class ThreadCount implements Runnable {
 
-    private JLabel imagesSpace;//Hay que cambiarlo para que acepte imagenes
+    private JLabel JLimagesSpace;//Hay que cambiarlo para que acepte imagenes
     private boolean state;
 
     private boolean sw;
 
     public ThreadCount(JLabel imagesSpace, boolean sw){
-        this.imagesSpace = imagesSpace;
+        this.JLimagesSpace = imagesSpace;
         this.sw = sw;
         state = true;
     }
@@ -35,7 +35,29 @@ public class ThreadCount implements Runnable {
     }
 
     private void showImages() throws IOException {
-        imagesSpace.setIcon(new ImageIcon(this.chargeFirstImage()));
+        Random rdn = new Random();
+        while (state){
+            int num = rdn.nextInt(60);
+            if (num>=1 && num<=10){
+                JLimagesSpace.setIcon(new ImageIcon(this.chargeFirstImage()));
+            }else if (num>=11 && num<=20){
+                JLimagesSpace.setIcon(new ImageIcon(this.chargeSecondImage()));
+            }else if (num>=21 && num<=30){
+                JLimagesSpace.setIcon(new ImageIcon(this.chargeThirdImage()));
+            }else if (num>=31 && num<=40){
+                JLimagesSpace.setIcon(new ImageIcon(this.chargeFourthImage()));
+            }else if (num>=41 && num<=50){
+                JLimagesSpace.setIcon(new ImageIcon(this.chargeFifthImage()));
+            }else if (num>=51 && num<=60){
+                JLimagesSpace.setIcon(new ImageIcon(this.chargeSixthImage()));
+            }
+            try {
+                Thread.sleep(new Random().nextInt(200));
+            }catch (InterruptedException e){
+                throw new RuntimeException(e);
+            }
+
+        }
     }
 
     /*
@@ -66,26 +88,69 @@ public class ThreadCount implements Runnable {
         state = false;
     }
 
-    private BufferedImage chargeFirstImage() throws IOException {
-        File imagenArchivo = new File("/TallerHilosSegundo50/src/imageResources/campan.jpg");
-        if (imagenArchivo.exists()) {
-            System.out.println("La ruta es válida y el archivo existe.");
-        } else {
-            System.out.println("La ruta no es válida o el archivo no existe.");
-        }
-        BufferedImage imagen = ImageIO.read(imagenArchivo);
-        return imagen;
+    private Image chargeFirstImage() throws IOException {
+        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/cerezas.png");
+        Image imagen = ImageIO.read(imagenArchivo);
+
+        int width = JLimagesSpace.getWidth();
+        int height = JLimagesSpace.getHeight();
+        Image scaledImage = imagen.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        return scaledImage;
     }
 
     private Image chargeSecondImage() throws IOException {
-        File imagenArchivo = new File("/TallerHilosSegundo50/src/imageResources/cerezas.png");
+        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/diamante.png");
         Image imagen = ImageIO.read(imagenArchivo);
-        return imagen;
+
+        int width = JLimagesSpace.getWidth();
+        int height = JLimagesSpace.getHeight();
+        Image scaledImage = imagen.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        return scaledImage;
     }
 
-    private BufferedImage chargeThirdImage() throws IOException {
-        File imagenArchivo = new File("imageResources/diamante.png");
-        BufferedImage imagen = ImageIO.read(imagenArchivo);
-        return imagen;
+    private Image chargeThirdImage() throws IOException {
+        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/limon.png");
+        Image imagen = ImageIO.read(imagenArchivo);
+
+        int width = JLimagesSpace.getWidth();
+        int height = JLimagesSpace.getHeight();
+        Image scaledImage = imagen.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        return scaledImage;
+    }
+
+    private Image chargeFourthImage() throws IOException {
+        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/sandia.png");
+        Image imagen = ImageIO.read(imagenArchivo);
+
+        int width = JLimagesSpace.getWidth();
+        int height = JLimagesSpace.getHeight();
+        Image scaledImage = imagen.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        return scaledImage;
+    }
+
+    private Image chargeFifthImage() throws IOException {
+        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/siete.png");
+        Image imagen = ImageIO.read(imagenArchivo);
+
+        int width = JLimagesSpace.getWidth();
+        int height = JLimagesSpace.getHeight();
+        Image scaledImage = imagen.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        return scaledImage;
+    }
+
+    private Image chargeSixthImage() throws IOException {
+        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/uva.png");
+        Image imagen = ImageIO.read(imagenArchivo);
+
+        int width = JLimagesSpace.getWidth();
+        int height = JLimagesSpace.getHeight();
+        Image scaledImage = imagen.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        return scaledImage;
     }
 }

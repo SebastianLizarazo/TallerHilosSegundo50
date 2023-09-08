@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f33b3b5c-0cd0-4bcc-bee2-118dd96dfcea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imageResources/campan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/imageResources/manzana.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" afterDir="false" />
     </list>
@@ -38,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/sebli/IdeaProjects/Hilos",
+    "last_opened_file_path": "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,7 +65,8 @@
       <workItem from="1693502300752" duration="4642000" />
       <workItem from="1693569933279" duration="11310000" />
       <workItem from="1694123184283" duration="696000" />
-      <workItem from="1694164578420" duration="5813000" />
+      <workItem from="1694164578420" duration="6657000" />
+      <workItem from="1694186523768" duration="4335000" />
     </task>
     <servers />
   </component>

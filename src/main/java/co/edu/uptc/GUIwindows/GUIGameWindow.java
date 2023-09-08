@@ -46,6 +46,9 @@ public class GUIGameWindow extends JFrame {
         JPCenter.setLayout(new GridLayout(2,3));//Organiza los componentes en una cuadricula
         JPCenter.setBounds(200,200,400,300);
 
+        JLImagesOne.setBounds(10,10,10,10);
+        JLImagesTwo.setBounds(10,10,10,10);
+        JLImagesThree.setBounds(10,10,10,10);
 
         add(JPMainArea);
         JPCenter.add(JLImagesOne);
@@ -65,7 +68,7 @@ public class GUIGameWindow extends JFrame {
     private void addComponents() {//El metodo controlador
 
         ThreadCount runOne = new ThreadCount(JLImagesOne,true);
-        ThreadCount runTwo = new ThreadCount(JLImagesTwo,false);
+        ThreadCount runTwo = new ThreadCount(JLImagesTwo,true);
         ThreadCount runThree = new ThreadCount(JLImagesThree,true);
 
         Thread thOne = new Thread(runOne);
