@@ -48,10 +48,14 @@ public class GUILastWindow extends JFrame implements ActionListener {
 
     private String announceProfit() {
         String announce = "";
-        if (currentBet.getAmountWinned()>0){
-            announce = "<html><center>Felicidades has ganado $"+currentBet.getAmountWinned()+"</center></html>";
+        if (currentBet==null){
+            announce = "<html><center>No escogiste nada, ¡Perdiste tu dinero! </center></html>";
         }else {
-            announce = "<html><center>Acabas de perder, muchas gracias por regalarnos tu dinero ;) </center></html>";
+            if (currentBet.getAmountWinned() > 0) {
+                announce = "<html><center>Felicidades has ganado $" + currentBet.getAmountWinned() + "</center></html>";
+            }else {
+                announce = "<html><center>Acabas de perder, muchas gracias por regalarnos tu dinero ;) </center></html>";
+            }
         }
         return announce;
     }
@@ -72,7 +76,7 @@ public class GUILastWindow extends JFrame implements ActionListener {
         JPInfoArea.setLayout(null);
 
         JLProfitInstructions.setBounds(5,3,450,100);
-        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 15));
+        JLProfitInstructions.setFont(new Font("Fredoka One", Font.BOLD, 18));
         JLProfitInstructions.setForeground(Color.black);
 
 

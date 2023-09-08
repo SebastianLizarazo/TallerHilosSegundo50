@@ -77,9 +77,9 @@ public class GUIGameWindow extends JFrame {
 
     private void addComponents() {//El metodo controlador
 
-        ThreadCount runOne = new ThreadCount(JLImagesOne,true);
-        ThreadCount runTwo = new ThreadCount(JLImagesTwo,true);
-        ThreadCount runThree = new ThreadCount(JLImagesThree,true);
+        ThreadCount runOne = new ThreadCount(JLImagesOne,true,this);
+        ThreadCount runTwo = new ThreadCount(JLImagesTwo,true,this);
+        ThreadCount runThree = new ThreadCount(JLImagesThree,true,this);
 
         Thread thOne = new Thread(runOne);
         Thread thTwo = new Thread(runTwo);

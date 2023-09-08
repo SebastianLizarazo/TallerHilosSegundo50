@@ -1,5 +1,8 @@
 package co.edu.uptc.logic;
 
+import co.edu.uptc.GUIwindows.GUIGameWindow;
+import co.edu.uptc.GUIwindows.GUILastWindow;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -14,12 +17,21 @@ public class ThreadCount implements Runnable {
     private boolean State;
 
     private  String ImageName;
+    private boolean stopRequested; // Bandera para indicar si se solicitó detener la visualización
+    private int initialDelay; // Tiempo de espera inicial entre cambios de imagen
+    private int delayIncrease; // Velocidad de disminución del tiempo de espera
+
+    private GUIGameWindow currentWindow;
 
 
 
-    public ThreadCount(JLabel imagesSpace, boolean state){
+
+    public ThreadCount(JLabel imagesSpace, boolean state, GUIGameWindow currentWindow){
         this.JLimagesSpace = imagesSpace;
         this.State = state;
+        this.initialDelay = 100;
+        this.delayIncrease = 50;
+        this.currentWindow = currentWindow;
     }
 
     public JLabel getJLimagesSpace() {
@@ -53,15 +65,14 @@ public class ThreadCount implements Runnable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            //this.minToMax();
-        }else{
-            //this.maxToMin();
         }
     }
 
     private void showImages() throws IOException {
         Random rdn = new Random();
-        while (State){
+        int delay = this.initialDelay; // Tiempo de espera inicial
+
+        while (State && !stopRequested){
             int num = rdn.nextInt(60);
             if (num>=1 && num<=10){
                 JLimagesSpace.setIcon(new ImageIcon(this.chargeFirstImage()));
@@ -77,9 +88,20 @@ public class ThreadCount implements Runnable {
                 JLimagesSpace.setIcon(new ImageIcon(this.chargeSixthImage()));
             }
             try {
-                Thread.sleep(new Random().nextInt(200));
+                Thread.sleep(delay);
             }catch (InterruptedException e){
                 throw new RuntimeException(e);
+            }
+
+            // Disminuir gradualmente el tiempo de espera (aumentar velocidad)
+            delay += delayIncrease;
+
+            // Restringir la velocidad mínima
+            if (delay >= 800) {
+                State = false;
+                currentWindow.setVisible(false);
+                GUILastWindow c = new GUILastWindow(null);
+                c.lastWindow();
             }
 
         }
@@ -87,6 +109,7 @@ public class ThreadCount implements Runnable {
 
     public void stopThread() {
         State = false;
+        stopRequested = true; // Indicar que se solicitó detener la visualización
     }
 
     private Image chargeFirstImage() throws IOException {

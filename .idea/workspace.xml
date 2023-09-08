@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f33b3b5c-0cd0-4bcc-bee2-118dd96dfcea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/cerezas.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/imageResources/cerezas.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/diamante.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/imageResources/diamante.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/limon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/imageResources/limon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/sandia.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/imageResources/sandia.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/siete.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/imageResources/siete.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/uva.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/imageResources/uva.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUILastWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUILastWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/co/edu/uptc/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +67,7 @@
       <workItem from="1694164578420" duration="6657000" />
       <workItem from="1694186523768" duration="8280000" />
       <workItem from="1694204432475" duration="3040000" />
+      <workItem from="1694208258668" duration="2559000" />
     </task>
     <servers />
   </component>
