@@ -90,7 +90,7 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeFirstImage() throws IOException {
-        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/cerezas.png";
+        String route =  "src/main/java/co/edu/uptc/GUIwindows/imageResources/cerezas.png";
         File imagenArchivo = new File(route);
         this.setImageName(route);
 
@@ -104,7 +104,7 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeSecondImage() throws IOException {
-        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/diamante.png";
+        String route =  "src/main/java/co/edu/uptc/GUIwindows/imageResources/diamante.png";
         File imagenArchivo = new File(route);
         this.setImageName(route);
 
@@ -118,7 +118,7 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeThirdImage() throws IOException {
-        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/limon.png";
+        String route =  "src/main/java/co/edu/uptc/GUIwindows/imageResources/limon.png";
         File imagenArchivo = new File(route);
         this.setImageName(route);
         Image imagen = ImageIO.read(imagenArchivo);
@@ -131,7 +131,7 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeFourthImage() throws IOException {
-        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/sandia.png";
+        String route =  "src/main/java/co/edu/uptc/GUIwindows/imageResources/sandia.png";
         File imagenArchivo = new File(route);
         this.setImageName(route);
 
@@ -145,7 +145,7 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeFifthImage() throws IOException {
-        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/siete.png";
+        String route =  "src/main/java/co/edu/uptc/GUIwindows/imageResources/siete.png";
         File imagenArchivo = new File(route);
         this.setImageName(route);
 
@@ -159,7 +159,7 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeSixthImage() throws IOException {
-        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/uva.png";
+        String route =  "src/main/java/co/edu/uptc/GUIwindows/imageResources/uva.png";
         File imagenArchivo = new File(route);
         this.setImageName(route);
 
