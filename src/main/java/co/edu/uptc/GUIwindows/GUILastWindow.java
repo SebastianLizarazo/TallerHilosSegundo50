@@ -6,9 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
-public class GUIInitialWindow extends JFrame implements ActionListener {
+public class GUILastWindow extends JFrame implements ActionListener {
+
     private JPanel JPFormArea;
     private JPanel JPInfoArea;
     private JLabel JLTitle;
@@ -19,7 +19,7 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
     private JButton JBStart;
     private JButton JBCancel;
 
-    public GUIInitialWindow(){
+    public GUILastWindow(Bet betRecived){
         JPFormArea = new JPanel();
         JPInfoArea = new JPanel();
 
@@ -48,7 +48,7 @@ public class GUIInitialWindow extends JFrame implements ActionListener {
         setResizable(false);
     }
 
-    public void makeMainForm(){
+    public void lastWindow(){
         JPFormArea.setBounds(0, 0, 575, 490);
         JPFormArea.setBackground(new Color(242, 242, 242));
 

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f33b3b5c-0cd0-4bcc-bee2-118dd96dfcea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUILastWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/campan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imageResources/manzana.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIGameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIInitialWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/GUIwindows/GUIInitialWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uptc/logic/ThreadCount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +67,7 @@
       <workItem from="1693569933279" duration="11310000" />
       <workItem from="1694123184283" duration="696000" />
       <workItem from="1694164578420" duration="6657000" />
-      <workItem from="1694186523768" duration="4335000" />
+      <workItem from="1694186523768" duration="6899000" />
     </task>
     <servers />
   </component>

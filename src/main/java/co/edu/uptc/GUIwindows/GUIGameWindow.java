@@ -1,5 +1,7 @@
 package co.edu.uptc.GUIwindows;
 
+import co.edu.uptc.logic.Bet;
+import co.edu.uptc.logic.GameController;
 import co.edu.uptc.logic.ThreadCount;
 
 import javax.swing.*;
@@ -8,6 +10,7 @@ import java.time.LocalTime;
 
 public class GUIGameWindow extends JFrame {
 
+    private GameController gameController;
     private JPanel JPMainArea;
     private JLabel JLImagesOne;//Deben ser cambiados por los espacios para imagenes
     private JLabel JLImagesTwo;//Deben ser cambiados por los espacios para imagenes
@@ -17,7 +20,13 @@ public class GUIGameWindow extends JFrame {
     private JButton JBtnTwo;
     private JButton JBtnThree;
 
-    public GUIGameWindow(){
+    private Bet currentBet;
+
+    public GUIGameWindow(Bet betRecived){
+        gameController = new GameController();
+
+        currentBet = betRecived;
+
         JPMainArea = new JPanel();
 
         JLImagesOne = new JLabel();
@@ -82,6 +91,15 @@ public class GUIGameWindow extends JFrame {
         //Los action listener de cada boton para detener el contador
         JBtnOne.addActionListener((e)->{
             runOne.stopThread();
+            if (gameController.isTheGameOver(runOne,runTwo,runThree)){
+                Double amountWined = GameController.calculateVictory(runOne,runTwo,runThree,currentBet); //Implementar metodo para calcular la victoria del jugador con el objeto bet entrante
+                currentBet.setAmountWinned(amountWined);
+                this.setVisible(false);
+                GUILastWindow c = new GUILastWindow(currentBet);
+                c.lastWindow();
+            }else {
+                System.out.println("no");
+            }
         });
         JBtnTwo.addActionListener((e)->{
             runTwo.stopThread();

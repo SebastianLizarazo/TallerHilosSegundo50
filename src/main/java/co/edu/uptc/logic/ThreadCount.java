@@ -11,18 +11,43 @@ import java.util.Random;
 public class ThreadCount implements Runnable {
 
     private JLabel JLimagesSpace;//Hay que cambiarlo para que acepte imagenes
-    private boolean state;
+    private boolean State;
 
-    private boolean sw;
+    private  String ImageName;
 
-    public ThreadCount(JLabel imagesSpace, boolean sw){
+
+
+    public ThreadCount(JLabel imagesSpace, boolean state){
         this.JLimagesSpace = imagesSpace;
-        this.sw = sw;
-        state = true;
+        this.State = state;
+    }
+
+    public JLabel getJLimagesSpace() {
+        return JLimagesSpace;
+    }
+
+    public void setJLimagesSpace(JLabel JLimagesSpace) {
+        this.JLimagesSpace = JLimagesSpace;
+    }
+
+    public boolean isState() {
+        return State;
+    }
+
+    public void setState(boolean state) {
+        this.State = state;
+    }
+
+    public String getImageName() {
+        return ImageName;
+    }
+
+    public void setImageName(String imageName) {
+        ImageName = imageName;
     }
 
     public void run(){
-        if (sw){
+        if (State){
             try {
                 showImages();
             } catch (IOException e) {
@@ -36,7 +61,7 @@ public class ThreadCount implements Runnable {
 
     private void showImages() throws IOException {
         Random rdn = new Random();
-        while (state){
+        while (State){
             int num = rdn.nextInt(60);
             if (num>=1 && num<=10){
                 JLimagesSpace.setIcon(new ImageIcon(this.chargeFirstImage()));
@@ -60,36 +85,15 @@ public class ThreadCount implements Runnable {
         }
     }
 
-    /*
-    private void minToMax(){
-        for (var x = Integer.MIN_VALUE ; x <= Integer.MAX_VALUE && state ; x++){
-            text.setText(""+x);//Va mostrando cada numero en pantalla
-            try {
-                Thread.sleep(new Random().nextInt(200));
-            }catch (InterruptedException e){
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-
-    private void maxToMin(){
-        for (var x = Integer.MAX_VALUE ; x >= Integer.MIN_VALUE && state; x--){
-            text.setText(""+x);
-            try {
-                Thread.sleep(new Random().nextInt(200));
-            }catch (InterruptedException e){
-                throw new RuntimeException(e);
-            }
-        }
-    }
-     */
     public void stopThread() {
-        state = false;
+        State = false;
     }
 
     private Image chargeFirstImage() throws IOException {
-        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/cerezas.png");
+        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/cerezas.png";
+        File imagenArchivo = new File(route);
+        this.setImageName(route);
+
         Image imagen = ImageIO.read(imagenArchivo);
 
         int width = JLimagesSpace.getWidth();
@@ -100,7 +104,10 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeSecondImage() throws IOException {
-        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/diamante.png");
+        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/diamante.png";
+        File imagenArchivo = new File(route);
+        this.setImageName(route);
+
         Image imagen = ImageIO.read(imagenArchivo);
 
         int width = JLimagesSpace.getWidth();
@@ -111,7 +118,9 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeThirdImage() throws IOException {
-        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/limon.png");
+        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/limon.png";
+        File imagenArchivo = new File(route);
+        this.setImageName(route);
         Image imagen = ImageIO.read(imagenArchivo);
 
         int width = JLimagesSpace.getWidth();
@@ -122,7 +131,10 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeFourthImage() throws IOException {
-        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/sandia.png");
+        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/sandia.png";
+        File imagenArchivo = new File(route);
+        this.setImageName(route);
+
         Image imagen = ImageIO.read(imagenArchivo);
 
         int width = JLimagesSpace.getWidth();
@@ -133,7 +145,10 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeFifthImage() throws IOException {
-        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/siete.png");
+        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/siete.png";
+        File imagenArchivo = new File(route);
+        this.setImageName(route);
+
         Image imagen = ImageIO.read(imagenArchivo);
 
         int width = JLimagesSpace.getWidth();
@@ -144,7 +159,10 @@ public class ThreadCount implements Runnable {
     }
 
     private Image chargeSixthImage() throws IOException {
-        File imagenArchivo = new File("C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/uva.png");
+        String route =  "C:/Users/sebli/IdeaProjects/TallerHilosSegundo50/src/imageResources/uva.png";
+        File imagenArchivo = new File(route);
+        this.setImageName(route);
+
         Image imagen = ImageIO.read(imagenArchivo);
 
         int width = JLimagesSpace.getWidth();
